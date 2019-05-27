@@ -2,16 +2,20 @@ package com.canvasjs.chart.model;
 
 
 import com.canvasjs.chart.data.ExchangeRateData;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.io.IOException;
 
+@Component
 public class Exchange {
 
-    private String currencyFrom ;
-    private String currencyTo ;
+    private String currencyFrom = "USD";
+    private String currencyTo = "JPY";
 
-//    @Autowired
-//    private CanvasjsChartService canvasjsChartService;
+    public Exchange(){
+
+    }
 
     public Exchange(String currencyFrom, String currencyTo) {
         this.currencyFrom = currencyFrom;

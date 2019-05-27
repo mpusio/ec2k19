@@ -15,12 +15,13 @@ import java.io.IOException;
 @Controller
 public class ExchangeController {
 
-    private Exchange exchange = new Exchange("PLN", "USD");
+    private Exchange exchange;
     private ExchangeRateService exchangeService;
     private CanvasjsChartService canvasjsChartService;
 
     @Autowired
-    public ExchangeController(ExchangeRateService exchangeService, CanvasjsChartService canvasjsChartService) {
+    public ExchangeController(ExchangeRateService exchangeService, CanvasjsChartService canvasjsChartService, Exchange exchange) {
+        this.exchange = exchange;
         this.exchangeService = exchangeService;
         this.canvasjsChartService = canvasjsChartService;
     }
