@@ -28,7 +28,7 @@ public class ExchangeController {
 
     @GetMapping("/index")
     public String exchangeRateForm(Model model) {
-        model.addAttribute("exchange", exchange);
+        model.addAttribute("exchange", new Exchange());
         return "index";
     }
 
