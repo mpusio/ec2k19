@@ -16,7 +16,7 @@
         window.onload = function() {
 
             var dataPointsHistorical = [];
-
+            var dataPointsTrend = [];
 
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
@@ -54,34 +54,26 @@
                         valueFormatString: "#0.00"
                     }
                 },
-                data: [{
-                    name: "Exchange price",
+                data: [
+                    {
+                    name: "Trend line",
+                    color:"green",
+                    showInLegend: true,
                     type: "line",
                     xValueFormatString: "DD MMM",
                     yValueFormatString: "#0.0000",
                     xValueType: "dateTime",
+                    dataPoints: dataPointsTrend
+                    },
+                    {
+                    name: "Exchange price",
+                    type: "line",
+                    showInLegend: true,
+                    xValueFormatString: "DD MMM",
+                    yValueFormatString: "#0.0000",
+                    xValueType: "dateTime",
                     dataPoints: dataPointsHistorical
-                }
-                    // {
-                    // name: "Trend line",
-                    // color:"green",
-                    // showInLegend: true,
-                    // type: "column",
-                    // xValueFormatString: "DD MMM",
-                    // yValueFormatString: "#0.0000",
-                    // xValueType: "dateTime",
-                    // dataPoints: dataPointsHistorical
-                    // }
-                    // ,{
-                //     name: "Falling trend lines",
-                //     color: "red",
-                //     showInLegend: true,
-                //     type: "column",
-                //     xValueFormatString: "DD MMM",
-                //     yValueFormatString: "#",
-                //     xValueType: "dateTime",
-                //     dataPoints: dataPointsTrendMode
-                // }
+                    }
                 ]
             });
 
@@ -92,12 +84,23 @@
                         y: data[i].price
                     });
                 }
+
+                chart.render();
+            }
+
+            function addData2(data) {
+                for (var i = 0; i < data.length; i++) {
+                    dataPointsTrend.push({
+                        x: new Date(data[i].date),
+                        y: data[i].price
+                    });
+                }
                 chart.render();
             }
 
 
             $.getJSON("/restfull-service/historical-exchange-data.json", addData);
-            //$.getJSON("/restfull-service/trend-line.json", addData);
+            $.getJSON("/restfull-service/trend-line.json", addData2);
             //$.getJSON("/restfull-service/mode-line.json", addData);
         }
     </script>

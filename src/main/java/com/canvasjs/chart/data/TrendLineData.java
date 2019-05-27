@@ -27,12 +27,16 @@ public class TrendLineData{
         String symbol = exchangeFrom + "" + exchangeTo;
         String apikey = "OSXGKBSLM61SZEI1";
         String adress = "https://www.alphavantage.co/query?function=HT_TRENDLINE&symbol=" +
-                symbol + "&interval=daily&series_type=close&apikey=" + apikey;
+                symbol + "&interval=weekly&series_type=close&apikey=" + apikey;
 
         resources = readJsonFromUrl(adress);
     }
 
     public static String getTrendLineDataList() throws IOException {
         return parseSpecificJSON(resources, "Technical Analysis: HT_TRENDLINE", "HT_TRENDLINE").toString();
+    }
+
+    public static JSONArray getTrendLineDataArray(){
+        return parseSpecificJSON(resources, "Technical Analysis: HT_TRENDLINE", "HT_TRENDLINE");
     }
 }

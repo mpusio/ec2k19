@@ -23,7 +23,7 @@ public class HistoricalExchangeData {
     public static void setJsonData(String exchangeFrom, String exchangeTo) throws IOException {
         String apikey = "OSXGKBSLM61SZEI1";
         String adress = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=" +
-                exchangeFrom + "&to_symbol=" + exchangeTo + "&apikey=" + apikey;
+                exchangeFrom + "&to_symbol=" + exchangeTo + "&outputsize=full&apikey=" + apikey;
 
         resources = readJsonFromUrl(adress);
     }

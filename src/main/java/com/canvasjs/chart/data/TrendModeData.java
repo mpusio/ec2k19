@@ -1,5 +1,6 @@
 package com.canvasjs.chart.data;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -23,12 +24,16 @@ public class TrendModeData {
         String symbol = exchangeFrom + "" + exchangeTo;
         String apikey = "OSXGKBSLM61SZEI1";
         String adress = "https://www.alphavantage.co/query?function=HT_TRENDMODE&symbol=" +
-                symbol + "&interval=daily&series_type=close&apikey=" + apikey;
+                symbol + "&interval=weekly&series_type=close&apikey=" + apikey;
 
         resources = readJsonFromUrl(adress);
     }
 
     public static String getTrendModeDataList() throws IOException {
         return parseSpecificJSON(resources, "Technical Analysis: HT_TRENDMODE", "TRENDMODE").toString();
+    }
+
+    public static JSONArray getTrendModeDataArray(){
+        return parseSpecificJSON(resources, "Technical Analysis: HT_TRENDMODE", "TRENDMODE");
     }
 }
