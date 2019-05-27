@@ -23,7 +23,7 @@ public class ExchangeRateData {
     }
 
     public static void setExchangeRate(String exchangeFrom, String exchangeTo) throws IOException {
-        String apikey = "T3DNFO6PXJ8EVWPM";
+        String apikey = "OSXGKBSLM61SZEI1";
         String adress = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+
                 exchangeFrom + "&to_currency=" + exchangeTo + "&apikey=" + apikey;
 

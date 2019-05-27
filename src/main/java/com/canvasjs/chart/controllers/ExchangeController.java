@@ -15,15 +15,23 @@ import java.io.IOException;
 @Controller
 public class ExchangeController {
 
-    private Exchange exchange;
     private ExchangeRateService exchangeService;
     private CanvasjsChartService canvasjsChartService;
 
     @Autowired
-    public ExchangeController(ExchangeRateService exchangeService, CanvasjsChartService canvasjsChartService, Exchange exchange) {
-        this.exchange = exchange;
+    public ExchangeController(ExchangeRateService exchangeService, CanvasjsChartService canvasjsChartService) {
         this.exchangeService = exchangeService;
         this.canvasjsChartService = canvasjsChartService;
+    }
+
+    @GetMapping("")
+    public String getStarter(){
+        return "starter";
+    }
+
+    @PostMapping("")
+    public String postStarter(){
+        return "index";
     }
 
     @GetMapping("/index")

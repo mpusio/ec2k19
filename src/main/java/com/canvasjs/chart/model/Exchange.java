@@ -3,12 +3,14 @@ package com.canvasjs.chart.model;
 
 import com.canvasjs.chart.data.CurriesData;
 import com.canvasjs.chart.data.ExchangeRateData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.io.IOException;
 import java.util.Set;
 
-@Component
 public class Exchange {
 
     private String currencyFrom = "USD";

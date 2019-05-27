@@ -21,7 +21,7 @@ public class TrendModeData {
 
     public static void setTrendModeDataList(String exchangeFrom, String exchangeTo) throws IOException {
         String symbol = exchangeFrom + "" + exchangeTo;
-        String apikey = "T3DNFO6PXJ8EVWPM";
+        String apikey = "OSXGKBSLM61SZEI1";
         String adress = "https://www.alphavantage.co/query?function=HT_TRENDMODE&symbol=" +
                 symbol + "&interval=daily&series_type=close&apikey=" + apikey;
 
