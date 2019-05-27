@@ -122,15 +122,21 @@
                 <h5>
                     <form action="#" th:action="@{/index}" th:object="${exchange}" method="post">
                         <p>Exchange From</p>
-                        <div class="input-field s1">
-                            <input id="cur1" type="text" class="validate" pattern="[A-Z]{3}" th:field="*{currencyFrom}"/>
-                            <label for="cur1">Currency From</label>
-                        </div>
+                        <label>Select first currency</label>
+                        <select class="browser-default" th:field="*{currencyFrom}">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
+                            </option>
+                        </select>
                         <p>To</p>
-                        <div class="input-field s1">
-                            <input id="cur2" type="text" class="validate" pattern="[A-Z]{3}" th:field="*{currencyTo}"/>
-                            <label for="cur2">Currency To</label>
-                        </div>
+                        <label>Select second currency</label>
+                        <select class="browser-default" th:field="*{currencyTo}">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
+                            </option>
+                        </select>
+                        <p th:text="'first: ' + ${exchange.currencyFrom}"></p>
+                        <p th:text="'second: ' + ${exchange.currencyTo}"></p>
                         <button class="btn-large waves-effect waves-light orange" type="submit" name="action">Exchange</button>
                     </form>
                 </h5>
@@ -147,8 +153,6 @@
             </div>
 
         </div>
-        <div id="pokaz"><p>Tutaj jakieś dane wywalam: </p></div>
-        <!-- <br>*Wykresy nie aktualizują się w czasie rzeczywistym, ze wzglęgu na ograniczoną ilość zapytań (500 na dzień)<br> -->
     </div>
 </div>
 

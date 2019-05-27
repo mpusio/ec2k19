@@ -1,11 +1,12 @@
 package com.canvasjs.chart.model;
 
 
+import com.canvasjs.chart.data.CurriesData;
 import com.canvasjs.chart.data.ExchangeRateData;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.io.IOException;
+import java.util.Set;
 
 @Component
 public class Exchange {
@@ -46,10 +47,10 @@ public class Exchange {
     public String getExchangeRate() throws IOException {
         return ExchangeRateData.getExchangeRate();
     }
-//
-//    public void setCanvasjsChart() throws IOException {
-//        canvasjsChartService.getHistoricalExchange(currencyFrom, currencyTo);
-//    }
+
+    public Set<String> getCurriesList() throws IOException {
+        return CurriesData.getCurriesSet();
+    }
 
 
 }

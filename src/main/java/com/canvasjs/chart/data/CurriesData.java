@@ -3,6 +3,8 @@ package com.canvasjs.chart.data;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Set;
+
 import static com.canvasjs.chart.useful.HandleJson.readJsonFromUrl;
 
 public class CurriesData {
@@ -22,8 +24,9 @@ public class CurriesData {
         return new JSONArray(resources);
     }
 
-    public static String getCurriesList() {
-        return convertToArrayJSON(json).toString();
+    public static Set<String> getCurriesSet() {
+        Set<String> resources = json.keySet();
+        return resources;
     }
 
 }

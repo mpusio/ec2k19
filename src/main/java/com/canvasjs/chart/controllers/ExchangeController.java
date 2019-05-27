@@ -40,5 +40,4 @@ public class ExchangeController {
         canvasjsChartService.setModeLine(exchange.getCurrencyFrom(), exchange.getCurrencyTo());
         return "index";
     }
-
 }
