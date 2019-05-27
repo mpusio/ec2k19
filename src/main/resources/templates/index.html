@@ -118,19 +118,19 @@
 
         <div class="row center">
 
-            <div class="col s7">
+<!--             <div class="col s7">
                 <h5>
                     <form action="#" th:action="@{/index}" th:object="${exchange}" method="post">
                         <p>Exchange From</p>
                         <label>Select first currency</label>
-                        <select class="browser-default" >
+                        <select class="browser-default" th:field="*{exchange.currencyFrom}" >
                             <option value="" disabled selected>Choose your option</option>
-                            <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
+                            <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}" >
                             </option>
                         </select>
                         <p>To</p>
                         <label>Select second currency</label>
-                        <select class="browser-default" >
+                        <select class="browser-default" th:field="*{exchange.currency}" >
                             <option value="" disabled selected>Choose your option</option>
                             <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
                             </option>
@@ -150,7 +150,7 @@
                         <p th:text="'From ' + ${exchange.currencyFrom}  + ' to ' + ${exchange.currencyTo}" />
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
