@@ -123,14 +123,14 @@
                     <form action="#" th:action="@{/index}" th:object="${exchange}" method="post">
                         <p>Exchange From</p>
                         <label>Select first currency</label>
-                        <select class="browser-default" th:field="*{exchange.currencyFrom}">
+                        <select class="browser-default" >
                             <option value="" disabled selected>Choose your option</option>
                             <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
                             </option>
                         </select>
                         <p>To</p>
                         <label>Select second currency</label>
-                        <select class="browser-default" th:field="*{exchange.currencyTo}">
+                        <select class="browser-default" >
                             <option value="" disabled selected>Choose your option</option>
                             <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
                             </option>
