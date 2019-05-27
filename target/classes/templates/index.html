@@ -133,8 +133,6 @@
                             <option th:each="i : ${exchange.getCurriesList()}" th:value="${i}" th:text="${i}">
                             </option>
                         </select>
-                        <p th:text="'first: ' + ${exchange.currencyFrom}"></p>
-                        <p th:text="'second: ' + ${exchange.currencyTo}"></p>
                         <button class="btn-large waves-effect waves-light orange" type="submit" name="action">Exchange</button>
                     </form>
                 </h5>
