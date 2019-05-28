@@ -12,7 +12,7 @@ public class ExchangeRateData {
 
     static {
         try {
-            resources = readJsonFromUrl("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=5BH9VE5T22Y2EW49");
+            resources = readJsonFromUrl("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=O6KQVKR3VL8CRUIS");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -23,7 +23,7 @@ public class ExchangeRateData {
     }
 
     public static void setExchangeRate(String exchangeFrom, String exchangeTo) throws IOException {
-        String apikey = "OSXGKBSLM61SZEI1";
+        String apikey = "O6KQVKR3VL8CRUIS";
         String adress = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+
                 exchangeFrom + "&to_currency=" + exchangeTo + "&apikey=" + apikey;
 
