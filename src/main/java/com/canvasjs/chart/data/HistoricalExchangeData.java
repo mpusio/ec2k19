@@ -14,14 +14,14 @@ public class HistoricalExchangeData {
 
     static {
         try {
-            resources = readJsonFromUrl("https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=USD&to_symbol=JPY&apikey=5BH9VE5T22Y2EW49");
+            resources = readJsonFromUrl("https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=USD&to_symbol=JPY&apikey=O6KQVKR3VL8CRUIS");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static void setJsonData(String exchangeFrom, String exchangeTo) throws IOException {
-        String apikey = "OSXGKBSLM61SZEI1";
+        String apikey = "O6KQVKR3VL8CRUIS";
         String adress = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=" +
                 exchangeFrom + "&to_symbol=" + exchangeTo + "&outputsize=full&apikey=" + apikey;
 
